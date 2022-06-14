@@ -97,7 +97,7 @@ class LinkedIn implements LinkedInInterface
             return false;
         }
 
-        $user = $this->api('GET', '/v2/me?fields=id,firstName,lastName,headline', ['format' => 'json', 'response_data_type' => 'array']);
+        $user = $this->api('GET', '/v2/me?fields=id,firstName,lastName,headline', ['response_data_type' => 'array']);
 
         return !empty($user['id']);
     }
