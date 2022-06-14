@@ -118,7 +118,9 @@ class Authenticator implements AuthenticatorInterface
                     'redirect_uri' => $redirectUri,
                     'client_id' => $this->appId,
                     'client_secret' => $this->appSecret,
-                ]
+                ],
+                null,
+                '&'
             );
 
             $response = ResponseConverter::convertToArray($this->getRequestManager()->sendRequest('POST', $url, $headers, $body));
